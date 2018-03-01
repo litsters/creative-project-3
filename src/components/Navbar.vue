@@ -2,7 +2,7 @@
     <nav class="navbar is-link" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item">
-          <img src="/static/images/icon.png" width="28" height="28">
+          <img v-bind:src="imagePath" width="28" height="28">
         </router-link>
 
         <button class="button navbar-burger" id="burger" v-on:click="toggleBurger()">
@@ -25,6 +25,11 @@
 <script>
  export default {
      name: 'Navbar',
+     data () {
+       return {
+         imagePath: '/creative-project-3/dist/static/images/icon.png'
+       }
+     },
      methods: {
        toggleBurger: function() {
          var burger = document.getElementById("burger");
